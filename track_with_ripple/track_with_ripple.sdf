@@ -1,0 +1,40 @@
+<?xml version='1.0'?>
+<sdf version="1.6">
+  <model name="track_with_ripple">
+    <static>true</static>
+    <link name='link'>
+
+      <collision name="collision">
+        <geometry>
+          <heightmap>
+            <uri>model://track_with_ripple/materials/textures/ripple.png</uri>
+            <size>17 13 0.07</size>
+            <pos>0 0 0</pos>
+          </heightmap>
+        </geometry>
+        <surface>
+          <contact>
+            <collide_bitmask>0xffff</collide_bitmask> <!-- 모든 물체와 충돌 -->       
+          </contact>
+        </surface>
+      </collision>
+
+      <visual name="visual">
+        <geometry>
+          <heightmap>
+            <use_terrain_paging>false</use_terrain_paging>
+            <texture>
+              <diffuse>model://track_with_ripple/materials/textures/track.png</diffuse> <!-- 기본 -->
+              <normal>model://track_with_ripple/materials/textures/track.png</normal> <!-- 굴곡 -->
+              <size>17</size> <!-- 지형 크기와 동일한 텍스처 크기 -->
+            </texture>
+            <uri>model://track_with_ripple/materials/textures/ripple.png</uri> <!-- 텍스처 -->
+            <size>17 13 0.07</size> <!-- 지형 크기, 최소 크기 2x2 -->
+            <pos>0 0 0</pos>
+          </heightmap>
+        </geometry>
+      </visual>
+      
+    </link>
+  </model>
+</sdf>
